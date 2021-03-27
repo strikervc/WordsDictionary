@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="WordsDictionary.Views.SearchPage"
+             Title="WordsDictionary"
+             NavigationPage.HasNavigationBar="True">
+    <ContentPage.Content>
+        <StackLayout>
+            <Entry Placeholder="Insert word here" Text="{Binding Word}"/>
+            <Button Text="Search" Command="{Binding WordCommand}"/>
+            <ListView ItemsSource="{Binding Items}" HasUnevenRows="True" IsVisible="True">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Margin="10, 0, 10, 10">
+                                <Label x:Name="definition" Text="{Binding Definition}" FontAttributes="Bold" FontSize="16"/>
+                                <Label x:Name="parofspeech" Text="{Binding PartOfSpeech}" />
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
