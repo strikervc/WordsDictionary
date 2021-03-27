@@ -1,0 +1,49 @@
+﻿using Prism.Navigation;
+using Prism.Services;
+using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Text;
+using System.Windows.Input;
+using WordsDictionary.Models;
+using WordsDictionary.Services;
+using Xamarin.Essentials;
+using Xamarin.Forms;
+
+namespace WordsDictionary.ViewModels
+{
+    public class SearchViewModel : BaseViewModel
+    {    
+        public ObservableCollection<Item> Items { get; set; } = new ObservableCollection<Item>();
+
+        public ICommand WordCommand { get; set; }
+
+        public Definition definition = new Definition();
+        public string Word { get; set; }       
+        public SearchViewModel(INavigationService navigationService, IPageDialogService pageDialogService) : base(navigationService, pageDialogService)
+        {
+            WordCommand = new Command(OnWord);
+        }
+        private async void OnWord()
+        {
+            WordsService wordService = new WordsService(config.APIKey);
+
+            if (Connectivity.NetworkAccess == NetworkAccess.Internet)
+            {
+
+                Items.Clear();
+                definition = await wordService.GetDefinitionAsync(Word);
+                foreach (Item item in definition.Definitions)
+                {
+                    Items.Add(item);
+                } 
+
+                await PageDialogService.DisplayAlertAsync("Alert", "Testing display", "Ok");
+            }
+            else
+            {
+                await PageDialogService.DisplayAlertAsync("Alert", "No hay una conexión a internet", "Ok");
+            }
+        }
+    }
+}

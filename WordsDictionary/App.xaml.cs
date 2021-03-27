@@ -1,0 +1,36 @@
+﻿using Prism;
+using Prism.Ioc;
+using Prism.Unity;
+using System;
+using WordsDictionary.ViewModels;
+using WordsDictionary.Views;
+using Xamarin.Forms;
+using Xamarin.Forms.Xaml;
+
+namespace WordsDictionary
+{
+    public partial class App : PrismApplication
+    {
+
+        public App(IPlatformInitializer platformInitializer = null) : base(platformInitializer) { }
+        protected override async void OnInitialized()
+        {
+            InitializeComponent();
+            await NavigationService.NavigateAsync("NavigationPage/HomePage");
+        }
+
+        protected override void RegisterTypes(IContainerRegistry containerRegistry)
+        {
+
+            containerRegistry.RegisterForNavigation<NavigationPage>();
+            containerRegistry.RegisterForNavigation<HomePage>();
+            containerRegistry.RegisterForNavigation<SearchPage>();
+            containerRegistry.RegisterForNavigation<SynonymsPage>();
+            containerRegistry.RegisterForNavigation<CategoryPage>();
+            containerRegistry.RegisterForNavigation<SearchPage, SearchViewModel>();
+            containerRegistry.RegisterForNavigation<SynonymsPage, SynonymsViewModel>();
+            containerRegistry.RegisterForNavigation<CategoryPage, CategoryViewModel>();
+            
+        }
+    }
+}
