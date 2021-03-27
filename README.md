@@ -18,6 +18,13 @@ This is the repo for the Mobile Dev Final Project, our dictionary with multiple 
   <img src="https://github.com/strikervc/WordsDictionary/blob/main/Screenshots/categorypage.jpg" width="200" title="hover text">
 </p>
                                                                                                                           
-                                                                                                                          
+## Group members
+
+Member| ID
+------| ------
+**David Tejada**| 1088315
+**Victor Valdez**| 1086515
+**Oscar Veloz**| 10865833
+
                                                                                                                           
                                                                                                                           
