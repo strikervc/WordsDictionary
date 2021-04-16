@@ -21,7 +21,7 @@ namespace WordsDictionary
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
-
+           
             containerRegistry.RegisterForNavigation<NavigationPage>();
             containerRegistry.RegisterForNavigation<HomePage>();
             containerRegistry.RegisterForNavigation<SearchPage>();

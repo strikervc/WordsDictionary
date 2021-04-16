@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             NavigationPage.HasNavigationBar="False" 
+             x:Class="UIXamarin.Views.SynonymPage">
+    <ScrollView>
+        <StackLayout Background="#F0F0F0">
+            <Label  Text="Synonyms" 
+                    Style="{StaticResource TitleLabelStyle}"/>
+
+            <Entry  Style="{StaticResource SearchEntryStyle}"/>
+
+            <Label  Text="Aqui va el Word que se busco de synonym" 
+                    Style="{StaticResource TitleLabelStyle}"/>
+
+            <ListView  ItemSelected="ListView_ItemSelected" Style="{StaticResource ListViewStyle}">
+                <ListView.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>Lista</x:String>
+                        <x:String>De</x:String>
+                        <x:String>Synonimos</x:String>
+                        <x:String>Aqui</x:String>
+                        <x:String>Van</x:String>
+                    </x:Array>
+                </ListView.ItemsSource>
+            </ListView>
+
+            <ListView  ItemSelected="ListView_ItemSelected" Style="{StaticResource ListViewStyle}">
+                <ListView.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>Lista</x:String>
+                        <x:String>De</x:String>
+                        <x:String>Rimas</x:String>
+                        <x:String>Podrian ir</x:String>
+                        <x:String>Aqui</x:String>
+                    </x:Array>
+                </ListView.ItemsSource>
+            </ListView>
+
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

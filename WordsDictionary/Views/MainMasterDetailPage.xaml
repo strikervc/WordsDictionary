@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:UIXamarin.Views"
+             IsPresented="False"
+             x:Class="UIXamarin.Views.MainMasterDetailPage"
+             
+             >
+    
+    <MasterDetailPage.Master>
+        <ContentPage Title="☰" BackgroundColor="Red">
+            <StackLayout BackgroundColor="#6F34E0">
+                <StackLayout Margin="25,10,25,0" Padding="0,15,0,15">
+                    <Image   HorizontalOptions="Center" WidthRequest="60" HeightRequest="60" Margin="5" BackgroundColor="#6F34E0"  Source="translatex1.png" ></Image>
+                </StackLayout>
+                <ListView x:Name="navigationDrawerList"  
+                  RowHeight="60"  
+                  SeparatorVisibility="None"  
+                  ItemSelected="OnMenuSelected"  
+                  BackgroundColor="#F0F0F0">
+
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout VerticalOptions="FillAndExpand"  
+                                 Orientation="Horizontal"  
+                                 Padding="20,10,0,10"  
+                                 Spacing="20">
+
+                                    <Image Source="{Binding Icon}"  
+                                     WidthRequest="30"  
+                                     HeightRequest="30"  
+                                     VerticalOptions="Center" />
+                                    <Label Text="{Binding Title}"  
+                                     FontSize="Medium"  
+                                     VerticalOptions="Center"  
+                                     TextColor="Black"/>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+        </ContentPage>
+    </MasterDetailPage.Master>
+
+    <MasterDetailPage.Detail>
+
+        <NavigationPage BarBackgroundColor="#6F34E0" BackgroundColor="#F0F0F0">
+            <x:Arguments>
+                <local:HomeTabbedPage/>
+            </x:Arguments>
+        </NavigationPage>
+    </MasterDetailPage.Detail>
+</MasterDetailPage>
