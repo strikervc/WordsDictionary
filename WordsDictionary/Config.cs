@@ -14,7 +14,10 @@ namespace WordsDictionary
            
         }
 
-        public const string HomePage = "Home";  
+        public const string HomePage = "HomePage";  
+        public const string NavigationPage = "NavigationPage";  
+        public const string MasterDetail = "Home";  
+        public const string SearchPage = "Search";  
 
     }
 }

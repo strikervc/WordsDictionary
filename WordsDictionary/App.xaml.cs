@@ -17,7 +17,7 @@ namespace WordsDictionary
         protected override async void OnInitialized()
         {
             InitializeComponent();
-            await NavigationService.NavigateAsync("NavigationPage/HomePage");
+            await NavigationService.NavigateAsync($"{Config.NavigationPage}/{Config.HomePage}");
         }
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
@@ -25,7 +25,7 @@ namespace WordsDictionary
            
             containerRegistry.RegisterForNavigation<NavigationPage>();
             containerRegistry.RegisterForNavigation<HomePage>();
-            containerRegistry.RegisterForNavigation<SearchPage>();
+            containerRegistry.RegisterForNavigation<SearchPage>(Config.SearchPage);
             containerRegistry.RegisterForNavigation<SynonymsPage>();
             containerRegistry.RegisterForNavigation<CategoryPage>();
             containerRegistry.RegisterForNavigation<SearchPage, SearchViewModel>();
