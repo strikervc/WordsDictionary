@@ -28,7 +28,7 @@ namespace WordsDictionary.ViewModels
 
         public async Task GetCategory()
         {
-            WordsService wordCategoryApi = new WordsService(config.APIKey);
+            WordsService wordCategoryApi = new WordsService(Config.ApiKey);
             WordCategories = await wordCategoryApi.GetCategory(Word);
 
             Category = WordCategories.Categories[0];

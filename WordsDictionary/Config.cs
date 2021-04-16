@@ -4,15 +4,17 @@ using System.Text;
 
 namespace WordsDictionary
 {
-    public class Config
+    public static class Config
     {
-        private string apiKey;
+        private static string apiKey;
 
-        public string APIKey
+        public static string ApiKey
         {
             get { return apiKey = "704ca8d251mshe6218a98dd2f799p114d43jsn0dae0dca77d3"; }
            
         }
+
+        public const string HomePage = "Home";  
 
     }
 }

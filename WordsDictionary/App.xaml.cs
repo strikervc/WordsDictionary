@@ -2,6 +2,7 @@
 using Prism.Ioc;
 using Prism.Unity;
 using System;
+using WordsDictionary.Services;
 using WordsDictionary.ViewModels;
 using WordsDictionary.Views;
 using Xamarin.Forms;
@@ -30,6 +31,7 @@ namespace WordsDictionary
             containerRegistry.RegisterForNavigation<SearchPage, SearchViewModel>();
             containerRegistry.RegisterForNavigation<SynonymsPage, SynonymsViewModel>();
             containerRegistry.RegisterForNavigation<CategoryPage, CategoryViewModel>();
+            containerRegistry.Register<IWordsService, WordsService>();
             
         }
     }

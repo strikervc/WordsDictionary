@@ -10,8 +10,6 @@ namespace WordsDictionary.ViewModels
     public abstract class BaseViewModel : INotifyPropertyChanged
     {
 
-        public Config config = new Config();
-
         public event PropertyChangedEventHandler PropertyChanged;
 
         protected INavigationService NavigationService { get;  }

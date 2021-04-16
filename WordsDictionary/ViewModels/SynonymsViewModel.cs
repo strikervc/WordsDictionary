@@ -28,7 +28,7 @@ namespace WordsDictionary.ViewModels
 
         public async void OnInstanceCommand()
         {
-            WordsService instanceApiService = new WordsService(config.APIKey);
+            WordsService instanceApiService = new WordsService(Config.ApiKey);
 
             if (Connectivity.NetworkAccess == NetworkAccess.Internet)
             {

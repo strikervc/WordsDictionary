@@ -26,7 +26,7 @@ namespace WordsDictionary.ViewModels
         }
         private async void OnWord()
         {
-            WordsService wordService = new WordsService(config.APIKey);
+            WordsService wordService = new WordsService(Config.ApiKey);
 
             if (Connectivity.NetworkAccess == NetworkAccess.Internet)
             {
