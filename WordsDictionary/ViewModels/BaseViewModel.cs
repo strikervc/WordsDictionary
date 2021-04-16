@@ -12,14 +12,9 @@ namespace WordsDictionary.ViewModels
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        protected INavigationService NavigationService { get;  }
-        protected IPageDialogService PageDialogService{ get;  }
-
         protected BaseViewModel (INavigationService navigationService, IPageDialogService pageDialogService) 
         {
-            NavigationService = navigationService;
-
-            PageDialogService = pageDialogService;
+         
 
         }
 

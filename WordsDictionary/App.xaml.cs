@@ -18,20 +18,21 @@ namespace WordsDictionary
         {
             InitializeComponent();
             await NavigationService.NavigateAsync($"{Config.NavigationPage}/{Config.HomePage}");
+      
         }
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
-           
-            containerRegistry.RegisterForNavigation<NavigationPage>();
-            containerRegistry.RegisterForNavigation<HomePage>();
+            containerRegistry.Register<IWordsService, WordsService>();
+            containerRegistry.RegisterForNavigation<NavigationPage>(Config.NavigationPage);
+            containerRegistry.RegisterForNavigation<HomePage>(Config.HomePage);
             containerRegistry.RegisterForNavigation<SearchPage>(Config.SearchPage);
-            containerRegistry.RegisterForNavigation<SynonymsPage>();
-            containerRegistry.RegisterForNavigation<CategoryPage>();
+            containerRegistry.RegisterForNavigation<SynonymsPage>(Config.SynonymsPage);
+            containerRegistry.RegisterForNavigation<CategoryPage>(Config.CategoryPage);
             containerRegistry.RegisterForNavigation<SearchPage, SearchViewModel>();
             containerRegistry.RegisterForNavigation<SynonymsPage, SynonymsViewModel>();
             containerRegistry.RegisterForNavigation<CategoryPage, CategoryViewModel>();
-            containerRegistry.Register<IWordsService, WordsService>();
+            
             
         }
     }

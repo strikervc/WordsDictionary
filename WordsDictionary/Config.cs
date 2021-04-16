@@ -18,6 +18,8 @@ namespace WordsDictionary
         public const string NavigationPage = "NavigationPage";  
         public const string MasterDetail = "Home";  
         public const string SearchPage = "Search";  
+        public const string SynonymsPage = "Search";  
+        public const string CategoryPage = "Search";  
 
     }
 }

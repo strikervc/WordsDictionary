@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using System.Windows.Input;
 using WordsDictionary.Models;
 using WordsDictionary.Services;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 
 namespace WordsDictionary.ViewModels
@@ -14,26 +15,40 @@ namespace WordsDictionary.ViewModels
     public class CategoryViewModel : BaseViewModel
     {
         public ICommand GetWordCommand { get; set; }
-        
+
+        private IPageDialogService _dialogService;
+
         public string Word { get; set; }
 
         public string Category { get; set; }
 
-        Category WordCategories = new Category();
+        Category wordCategories = new Category();
 
         public CategoryViewModel(INavigationService navigationService, IPageDialogService pageDialogService) : base(navigationService, pageDialogService)
         {
             GetWordCommand = new Command(async () => await GetCategory());
+
+            _dialogService = pageDialogService;
         }
 
         public async Task GetCategory()
         {
             WordsService wordCategoryApi = new WordsService(Config.ApiKey);
-            WordCategories = await wordCategoryApi.GetCategory(Word);
 
-            Category = WordCategories.Categories[0];
-            await PageDialogService.DisplayAlertAsync("Category", $"This word belongs to the category: {Category}", "Ok");
+           
+            if (Connectivity.NetworkAccess == NetworkAccess.Internet)
+            {
+                wordCategories = await wordCategoryApi.GetCategory(Word);
 
+                Category = wordCategories.Categories[0];
+
+                await _dialogService.DisplayAlertAsync("Category", $"This word belongs to the category: {Category}", "Ok");
+
+            }
+            else
+            {
+                await _dialogService.DisplayAlertAsync("Alert", "No hay una conexión a internet", "Ok");
+            }
         }
         
     }

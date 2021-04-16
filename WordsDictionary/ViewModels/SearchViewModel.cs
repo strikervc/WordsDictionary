@@ -16,6 +16,7 @@ namespace WordsDictionary.ViewModels
     {    
         public ObservableCollection<Item> Items { get; set; } = new ObservableCollection<Item>();
 
+        private IPageDialogService _wordsService;
         public ICommand WordCommand { get; set; }
 
         public Definition definition = new Definition();
@@ -23,6 +24,7 @@ namespace WordsDictionary.ViewModels
         public SearchViewModel(INavigationService navigationService, IPageDialogService pageDialogService) : base(navigationService, pageDialogService)
         {
             WordCommand = new Command(OnWord);
+            _wordsService = pageDialogService;
         }
         private async void OnWord()
         {
@@ -38,11 +40,11 @@ namespace WordsDictionary.ViewModels
                     Items.Add(item);
                 } 
 
-                await PageDialogService.DisplayAlertAsync("Alert", "Testing display", "Ok");
+                await _wordsService.DisplayAlertAsync("Alert", "Testing display", "Ok");
             }
             else
             {
-                await PageDialogService.DisplayAlertAsync("Alert", "No hay una conexión a internet", "Ok");
+                await _wordsService.DisplayAlertAsync("Alert", "No hay una conexión a internet", "Ok");
             }
         }
     }
