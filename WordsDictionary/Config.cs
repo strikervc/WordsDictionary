@@ -8,9 +8,10 @@ namespace WordsDictionary
     {
         private static string apiKey;
 
+        public const string apiBaseAddress = "https://wordsapiv1.p.rapidapi.com/";
         public static string ApiKey
         {
-            get { return apiKey = "704ca8d251mshe6218a98dd2f799p114d43jsn0dae0dca77d3"; }
+            get { return apiKey = "YOUR API KEY"; }
            
         }
 
