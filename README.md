@@ -8,7 +8,7 @@ My workgroup choosed the WordsAPI (https://rapidapi.com/dpventures/api/wordsapi?
 - Get Definitions
 - Get Synonyms
 - Get Category
-- 
+
 Note: To test replace the ApiKey to use your own WordAPI Api Key in Config.cs
 
 ## Mockup link:
