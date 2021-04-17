@@ -47,7 +47,7 @@ namespace WordsDictionary.ViewModels
             }
             else
             {
-                await _wordsService.DisplayAlertAsync("Error of access", "There is no internet connection", "Ok");
+                await _dialogService.DisplayAlertAsync("Error of access", "There is no internet connection", "Ok");
             }
         }
         
