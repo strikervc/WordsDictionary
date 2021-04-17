@@ -25,6 +25,7 @@ namespace WordsDictionary.ViewModels
         {
             WordCommand = new Command(OnWord);
             _wordsService = pageDialogService;
+            
         }
         private async void OnWord()
         {
