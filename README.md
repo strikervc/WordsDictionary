@@ -1,22 +1,56 @@
 # WordsDictionary
-This is the repo for the Mobile Dev Final Project, our dictionary with multiple functions as well. 
 
-#### Some screenshots bellow
+This is the final project of the workgroup no. 5 using Xamarin.Forms and a REST API for consume it.
+
+My workgroup choosed the WordsAPI (https://rapidapi.com/dpventures/api/wordsapi?endpoint=54b86419e4b058c0230e421c) for search definitions, synonyms and categories. The concept of our application was around a pharmacy and its products, but we did not find an API to meet our needs, so we chose to switch to an app that works as a word dictionary, and help the user with grammar topics. Our application is able to return several meanings of an entered word, as well as a synonym of it or its category.
+
+#### EndPoints used: 
+- Get Definitions
+- Get Synonyms
+- Get Category
+- 
+Note: To test replace the ApiKey to use your own WordAPI Api Key in Config.cs
+
+## Mockup link:
+https://youtu.be/4IVZVspwnk4
+
+
+## Work division:
+For visiting our trello board, you can even [click here](https://trello.com/b/VKZ0NmYZ/software-dictionary-movil)
+
+## Screenshots
 <p align="left">
   <img src="https://github.com/strikervc/WordsDictionary/blob/main/Screenshots/homepage.jpg" width="200" title="hover text">
 </p>
 
 <p align="left">
-  <img src="https://github.com/strikervc/WordsDictionary/blob/main/Screenshots/definitions.jpg" width="200" title="hover text">
+  <img src="https://github.com/strikervc/WordsDictionary/blob/main/Screenshots/writing-word.jpg" width="200" title="hover text">
 </p>
 
 <p align="left">
-  <img src="https://github.com/strikervc/WordsDictionary/blob/main/Screenshots/synonymspage.jpg" width="200" title="hover text">
+  <img src="https://github.com/strikervc/WordsDictionary/blob/main/Screenshots/word-writed.jpg" width="200" title="hover text">
 </p>
-                                                                                                                          
+
 <p align="left">
-  <img src="https://github.com/strikervc/WordsDictionary/blob/main/Screenshots/categorypage.jpg" width="200" title="hover text">
+  <img src="https://github.com/strikervc/WordsDictionary/blob/main/Screenshots/search-complete.jpg" width="200" title="hover text">
 </p>
+
+<p align="left">
+  <img src="https://github.com/strikervc/WordsDictionary/blob/main/Screenshots/search-results.jpg" width="200" title="hover text">
+</p>
+
+<p align="left">
+  <img src="https://github.com/strikervc/WordsDictionary/blob/main/Screenshots/another-results.jpg" width="200" title="hover text">
+</p>
+
+<p align="left">
+  <img src="https://github.com/strikervc/WordsDictionary/blob/main/Screenshots/synonym-result.jpg" width="200" title="hover text">
+</p>
+
+<p align="left">
+  <img src="https://github.com/strikervc/WordsDictionary/blob/main/Screenshots/category-result.jpg" width="200" title="hover text">
+</p>
+
                                                                                                                           
 ## Group members
 
@@ -24,7 +58,15 @@ Member| ID
 ------| ------
 **David Tejada**| 1088315
 **Victor Valdez**| 1086515
-**Oscar Veloz**| 10865833
+**Oscar Veloz**| 1086583
 
-                                                                                                                          
-                                                                                                                          
+                                                                                                                             
+## Libraries used
+- **Xamarin.Essentials** - Essential cross platform APIs for your mobile apps. https://github.com/xamarin/Essentials
+
+- **Prism.Unity.Forms** - Framework for building loosely coupled, maintainable, and testable XAML applications in WPF, Windows 10 UWP, and Xamarin Forms. https://github.com/PrismLibrary/Prism/releases/tag/v7.2.0.1422
+
+- **Newtonsoft.Json** - Flexible JSON serializer for converting between .NET objects and JSON. https://github.com/JamesNK/Newtonsoft.Json
+
+- **PropertyChanged.Fody** - Handles property changed events.
+https://github.com/Fody/PropertyChanged
