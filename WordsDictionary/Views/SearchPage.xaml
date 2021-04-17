@@ -6,7 +6,7 @@
    
     <ContentPage.Content>
 
-        <Grid RowDefinitions="Auto, Auto, Auto, Auto, Auto, Auto, Auto" ColumnDefinitions="Auto"  HorizontalOptions="CenterAndExpand">
+        <Grid RowDefinitions="Auto, Auto, Auto, Auto, Auto, Auto" ColumnDefinitions="Auto"  HorizontalOptions="CenterAndExpand">
             <Frame Grid.Row="0" Grid.Column="0" BackgroundColor="#f8c700" HasShadow="False">
                 <StackLayout>
                     <Label Text="WordsDictionary" FontSize="Large" FontAttributes="Bold" TextColor="#7e6304" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"/>
@@ -28,18 +28,15 @@
                     FontAttributes="Bold"
                     Command="{Binding WordCommand}"
                     Background="#f8c700"/>
+            
             <Label Grid.Row="3" Grid.Column="0" 
                    Text="{Binding Word}" 
                    Style="{StaticResource TitleLabelStyle}"/>
 
-            <Label Grid.Row="4" Grid.Column="0" 
-                   Text="{Binding Pronunciation}"
-                   FontAttributes="Italic"/>
-            
-            <Label Grid.Row="5" Grid.Column="0"
+            <Label Grid.Row="4" Grid.Column="0"
                    Margin="15, 0, 15, 0" 
                    Text="WordsDictionary Random House Learner's of Speech © 2021." FontSize="Small"/>
-            <ListView Grid.Row="6" Grid.Column="0" 
+            <ListView Grid.Row="5" Grid.Column="0" 
                       Margin="15, 15, 15, 15" 
                       ItemsSource="{Binding Items}" 
                       HasUnevenRows="True" IsVisible="True">
