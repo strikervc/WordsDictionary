@@ -42,12 +42,12 @@ namespace WordsDictionary.ViewModels
 
                 Category = wordCategories.Categories[0];
 
-                await _dialogService.DisplayAlertAsync("Category", $"This word belongs to the category: {Category}", "Ok");
+                await _dialogService.DisplayAlertAsync(Messages.Category, $"This word belongs to the category: {Category}", Messages.OkOption);
 
             }
             else
             {
-                await _dialogService.DisplayAlertAsync("Error of access", "There is no internet connection", "Ok");
+                await _dialogService.DisplayAlertAsync($"{Messages.NoConnection}", $"{Messages.NoConnectionMessage}", $"{Messages.OkOption}");
             }
         }
         

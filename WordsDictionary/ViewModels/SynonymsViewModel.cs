@@ -20,8 +20,7 @@ namespace WordsDictionary.ViewModels
         private IPageDialogService _dialogService;
 
         Synonym synonym = new Synonym();
-        ObservableCollection<string> Synonims { get; set; } = new ObservableCollection<string>();
-
+       
         public SynonymsViewModel(INavigationService navigationService, IPageDialogService pageDialogService) : base(navigationService, pageDialogService)
         {
             InstanceCommand = new Command(OnInstanceCommand);
@@ -38,12 +37,12 @@ namespace WordsDictionary.ViewModels
             {
                 synonym = await instanceApiService.GetInstanceAsync(Word);
 
-                await _dialogService.DisplayAlertAsync("Synonym", $"{synonym.Synonyms[0]}", "Ok");    
+                await _dialogService.DisplayAlertAsync(Messages.Synonym, $"{synonym.Synonyms[0]}", Messages.OkOption);    
 
             }
             else 
             {
-                await _dialogService.DisplayAlertAsync("Error of access", "There is no internet connection", "Ok");
+                await _dialogService.DisplayAlertAsync($"{Messages.NoConnection}", $"{Messages.NoConnectionMessage}", $"{Messages.OkOption}");
             }
         }
     }
