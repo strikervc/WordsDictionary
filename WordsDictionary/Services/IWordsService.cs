@@ -11,5 +11,6 @@ namespace WordsDictionary.Services
         Task<Synonym> GetInstanceAsync(string word);
         Task<Category> GetCategory(string word);
         Task<Definition> GetDefinitionAsync(string word);
+        Task<Pronunciation> GetPronunciationAsync(string word);
     }
 }

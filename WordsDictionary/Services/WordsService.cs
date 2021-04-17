@@ -78,14 +78,14 @@ namespace WordsDictionary.Services
             }
         }
 
-        const string APIBaseAddress = "https://wordsapiv1.p.rapidapi.com/";
+       
         public async Task<Category> GetCategory(string word)
         {
             Category categories = new Category();
 
             var httpClient = new HttpClient
             {
-                BaseAddress = new Uri(APIBaseAddress),
+                BaseAddress = new Uri(Config.apiBaseAddress),
                 DefaultRequestHeaders =
                 {
                     { "x-rapidapi-key",  APIKey },
@@ -108,5 +108,37 @@ namespace WordsDictionary.Services
 
             return null;
         }
+
+        public async Task<Pronunciation> GetPronunciationAsync(string word)
+        {
+            Pronunciation result = new Pronunciation();
+            HttpClient client = new HttpClient();
+
+            string uriString = $"https://wordsapiv1.p.rapidapi.com/words/{word}/pronunciation";
+            var request = new HttpRequestMessage
+            {
+                Method = HttpMethod.Get,
+                RequestUri = new Uri(uriString),
+                Headers = {
+                    { "x-rapidapi-key", APIKey },
+                    { "x-rapidapi-host", "wordsapiv1.p.rapidapi.com" },
+                },
+            };
+
+            using (var response = await client.SendAsync(request))
+            {
+                if (response.IsSuccessStatusCode)
+                {
+                    var jsonPayload = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
+
+                    result = await Task.Run(() =>
+                           JsonConvert.DeserializeObject<Pronunciation>(jsonPayload)
+                        ).ConfigureAwait(false);
+                }
+
+                return result;
+            }
+        }
+
     }
 }
