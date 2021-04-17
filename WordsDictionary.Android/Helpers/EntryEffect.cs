@@ -35,11 +35,11 @@ namespace WordsDictionary.Droid.Helpers
                     Console.WriteLine("Cannot set property on attached control. Error: ", ex.Message);
                 }
             }
-            //this.Control.Background = new ColorDrawable(Android.Graphics.Color.Transparent);
+            
         }
         protected override void OnDetached()
         {
-            //throw new NotImplementedException();
+           
         }
         protected override void OnElementPropertyChanged(System.ComponentModel.PropertyChangedEventArgs args)
         {
