@@ -1,12 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="WordsDictionary.Views.CategoryPage">
+             x:Class="WordsDictionary.Views.CategoryPage"
+             xmlns:Effects="clr-namespace:WordsDictionary.Effects">
     <ContentPage.Content>
         <StackLayout>
             <Entry Placeholder="Enter a word" Text="{Binding Word}"
                    VerticalOptions="CenterAndExpand"
-                   HorizontalOptions="FillAndExpand"/>
+                   HorizontalOptions="FillAndExpand">
+                <Entry.Effects>
+                   <Effects:EntryEffect/>
+                </Entry.Effects>
+            </Entry>
             <Button Text="Get Category" Command="{Binding GetWordCommand}"
                     HorizontalOptions="Center"
                     VerticalOptions="CenterAndExpand"/>

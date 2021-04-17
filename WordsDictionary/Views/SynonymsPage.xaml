@@ -1,10 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="WordsDictionary.Views.SynonymsPage">
+             x:Class="WordsDictionary.Views.SynonymsPage"
+             xmlns:Effects="clr-namespace:WordsDictionary.Effects">
     
     <StackLayout HorizontalOptions="Center" VerticalOptions="Center" >
-        <Entry Text="{Binding Word}"/>
+        <Entry Text="{Binding Word}">
+            <Entry.Effects>
+                <Effects:EntryEffect/>
+            </Entry.Effects>
+        </Entry>
         <Button Text="Synonyms" TextColor="Black" BackgroundColor="LightGray" Command="{Binding InstanceCommand}"/>
     </StackLayout>
     

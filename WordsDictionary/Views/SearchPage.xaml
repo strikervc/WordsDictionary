@@ -1,7 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="WordsDictionary.Views.SearchPage">
+             x:Class="WordsDictionary.Views.SearchPage"
+             xmlns:Effects="clr-namespace:WordsDictionary.Effects">
    
     <ContentPage.Content>
 
@@ -14,7 +15,11 @@
             <Entry Grid.Row="1" Grid.Column="0" 
                    Placeholder="Insert word here"
                    Text="{Binding Word}" 
-                   Style="{StaticResource SearchEntryStyle}"/>
+                   Style="{StaticResource SearchEntryStyle}">
+                <Entry.Effects>
+                    <Effects:EntryEffect/>
+                </Entry.Effects>
+            </Entry>
             <Button Grid.Row="2" Grid.Column="0" 
                     Margin="15, 15, 15, 15" 
                     CornerRadius="10" 
