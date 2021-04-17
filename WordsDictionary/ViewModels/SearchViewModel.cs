@@ -20,7 +20,10 @@ namespace WordsDictionary.ViewModels
         public ICommand WordCommand { get; set; }
 
         public Definition definition = new Definition();
-        public string Word { get; set; }       
+
+        public Pronunciation pronunciation = new Pronunciation();
+        public string Word { get; set; }        
+        public string Pronunciation { get; set; }       
         public SearchViewModel(INavigationService navigationService, IPageDialogService pageDialogService) : base(navigationService, pageDialogService)
         {
             WordCommand = new Command(OnWord);
@@ -35,17 +38,20 @@ namespace WordsDictionary.ViewModels
             {
 
                 Items.Clear();
+               
+                pronunciation = await wordService.GetPronunciationAsync(Word);
                 definition = await wordService.GetDefinitionAsync(Word);
                 foreach (Item item in definition.Definitions)
                 {
                     Items.Add(item);
-                } 
+                }
 
-                await _wordsService.DisplayAlertAsync("Alert", "Testing display", "Ok");
+
+                await _wordsService.DisplayAlertAsync("Search completed", $"All definitions for {Word} listed bellow on screen", "Ok");
             }
             else
             {
-                await _wordsService.DisplayAlertAsync("Alert", "No hay una conexión a internet", "Ok");
+                await _wordsService.DisplayAlertAsync("Error of access", "There is no internet connection", "Ok");            
             }
         }
     }
