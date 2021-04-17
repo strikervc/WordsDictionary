@@ -1,4 +1,4 @@
-﻿using Prism;
+﻿    using Prism;
 using Prism.Ioc;
 using Prism.Unity;
 using System;
@@ -17,7 +17,7 @@ namespace WordsDictionary
         protected override async void OnInitialized()
         {
             InitializeComponent();
-            await NavigationService.NavigateAsync($"{Config.NavigationPage}/{Config.HomePage}");
+            await NavigationService.NavigateAsync($"{Config.HomePage}");
       
         }
 

@@ -7,7 +7,7 @@ using UIXamarin.Views;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace UIXamarin.Views
+namespace WordsDictionary.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class AboutPage : ContentPage

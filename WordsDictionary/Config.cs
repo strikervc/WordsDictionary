@@ -15,11 +15,15 @@ namespace WordsDictionary
         }
 
         public const string HomePage = "HomePage";  
+
         public const string NavigationPage = "NavigationPage";  
-        public const string MasterDetail = "Home";  
-        public const string SearchPage = "Search";  
-        public const string SynonymsPage = "Search";  
-        public const string CategoryPage = "Search";  
+
+
+        public const string SearchPage = "SearchPage";  
+
+        public const string SynonymsPage = "SynonymsPage";  
+
+        public const string CategoryPage = "CategoryPage";  
 
     }
 }
